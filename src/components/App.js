@@ -1,13 +1,26 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
+import { BrowserRouter as Router, Route } from 'react-router-dom'
+import { connect } from 'react-redux'
+import { handleInitialData } from '../actions/shared'
+import Login from './Login'
+import Home from './Home'
 
 class App extends Component {
-  render() {
+  componentDidMount() {
+    this.props.dispatch(handleInitialData())
+  }
+  
+  render () {
     return (
-      <div>
-        Would you rather
-      </div>
+      <Router>
+        <div className='container'>
+          <Route path='/' exact component={Home} />
+          <Route path='/login' exact component={Login} />
+        </div>
+      </Router>
     )
+
   }
 }
 
-export default App;
+export default connect()(App)
