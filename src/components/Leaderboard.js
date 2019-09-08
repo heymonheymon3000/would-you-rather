@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react'
-import '../css/leaderboard.css'
-import { connect } from 'react-redux'
 import { Card, Container, Row, Col, Media }  from 'react-bootstrap'
+import { connect } from 'react-redux'
+import '../css/leaderboard.css'
 
 class Leaderboard extends Component {
   render() {
@@ -15,10 +15,10 @@ class Leaderboard extends Component {
               <Card  style={{ width: '48rem' }}>
                 <Media>
                   <img
-                      className="avatar-takevote align-self-center mr-5 ml-5"
+                      className="avatar-vote align-self-center mr-5 ml-5"
                       src={users[user.id].avatarURL}
                       alt={`Avatar of ${users[user.id].avatarURL}`}/>
-                    <Media.Body className='media-body-takevote'>
+                    <Media.Body className='media-body-vote'>
                       <Container>
                         <Row>
                           <Col md={{ span: 8}}>

@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
-import '../css/user.css'
 import { connect } from 'react-redux'
-import { setAuthedUser } from '../actions/authedUser.js'
 import { Redirect } from 'react-router-dom'
 import {Media}  from 'react-bootstrap'
+import '../css/user.css'
+import { setAuthedUser } from '../actions/authedUser'
 
 class User extends Component {
   state = {

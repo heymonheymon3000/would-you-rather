@@ -1,9 +1,8 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import '../css/new-question.css'
-import { handleSaveQuestion } from '../actions/questions'
 import { Redirect } from 'react-router-dom'
-import { Form, Container, Row, Card, Button } from 'react-bootstrap';
+import { Form, Container, Row, Card, Button } from 'react-bootstrap'
+import { handleSaveQuestion } from '../actions/questions'
 
 class AddQuestion extends Component {
   state = {
@@ -16,9 +15,7 @@ class AddQuestion extends Component {
     const text = e.target.value
     const name = e.target.name
 
-    this.setState(() => ({
-      [name]: text
-    }))
+    this.setState(() => ({[name]: text}))
   }
 
   createQuestion = e => {
@@ -28,10 +25,9 @@ class AddQuestion extends Component {
 
     dispatch(
       handleSaveQuestion({ optionOneText, optionTwoText, authedUser })
-    ).then(() =>
-      this.setState(() => ({
-        redirectHome: true
-      }))
+    )
+    .then(() =>
+      this.setState(() => ({redirectHome: true}))
     )
   }
 

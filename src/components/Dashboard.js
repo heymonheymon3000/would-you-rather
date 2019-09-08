@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import Question from './Question'
-import '../css/dashboard.css'
 import { createSelector } from 'reselect'
 import { Tabs, Tab, Container }  from 'react-bootstrap'
+import Question from './Question'
+import '../css/dashboard.css'
 
 class Dashboard extends Component {
   render() {

@@ -1,0 +1,18 @@
+.media-body-vote {
+	border-left: solid 1px #ccc;
+}
+
+.avatar-vote {
+	border-radius: 50%;
+	max-height: 80px;
+	height: 80px;
+	float: left;
+	margin-right: 12px;
+	margin-top: 5px;
+	vertical-align: middle;
+}
+
+.img-error {
+	width:220px;
+	height:220px;
+}

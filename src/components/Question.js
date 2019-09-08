@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import '../css/question.css'
 import { Card, Row, Media, Container, Col, Button }  from 'react-bootstrap'
 import { LinkContainer } from 'react-router-bootstrap'
+import '../css/question.css'
 
 class Question extends Component {
   getRandomInt = (min, max) => {

@@ -1,16 +1,3 @@
-.questions {
-	list-style: none;
-}
-
-.question {
-	padding-bottom: 24px;
-}
-
-.category-toggler {
-	margin-left: 42%;
-	margin-top: 2%;
-}
-
 .tab-pane {
     border-left: 1px solid #ddd;
     border-right: 1px solid #ddd;

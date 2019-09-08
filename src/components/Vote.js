@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import '../css/question.css'
-import '../css/takeVote.css'
-import { handleSaveQuestionAnswer } from '../actions/questions'
-import { Link } from 'react-router-dom'
+import { LinkContainer } from 'react-router-bootstrap'
 import { Card, Row, Media, Container, Col, Button, ProgressBar }  from 'react-bootstrap'
 import {RadioGroup, Radio} from 'react-radio-group'
+import '../css/question.css'
+import '../css/vote.css'
+import { handleSaveQuestionAnswer } from '../actions/questions'
 
 class Vote extends Component {
   state = {
@@ -27,14 +27,22 @@ class Vote extends Component {
 
     if (rogueQuestion) {
       return (
-        <div className="vote-container">
-          <h2>404: Woops, seems like that question went rogue!</h2>
-          <p>
-            Return to{' '}
-            <Link to="/">
-              <span className="green">safety</span>
-            </Link>
-          </p>
+        <div className="container bootstrap snippet">
+         <div className="row" >
+          <div className="col-md-12">
+           <div className="pull-right" style={{marginTop: '10px'}}>
+            <div className="col-md-10 col-md-offset-1 pull-right">
+             <h2>404 Not Found</h2>
+             <p>Sorry, an error has occured, Requested page not found!</p>
+             <div className="error-actions">
+               <LinkContainer className="nav-link" to="/home">
+                 <span className='btn btn-primary btn-lg'>Back Home</span>
+               </LinkContainer>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
         </div>
       )
     }
@@ -55,10 +63,10 @@ class Vote extends Component {
               <Card.Body>
                 <Media>
                   <img
-                    className="avatar-takevote align-self-center mr-5 ml-3"
+                    className="avatar-vote align-self-center mr-5 ml-3"
                     src={users[question.author].avatarURL}
                     alt={`Avatar of ${users[question.author].avatarURL}`} />
-                  <Media.Body className='media-body-takevote'>
+                  <Media.Body className='media-body-vote'>
                     <Container>
                       <Row>
                         <Col md={{ span: 10, offset: 1}} style={{ marginBottom: '8px', fontWeight: 'bold'}} >
@@ -76,7 +84,7 @@ class Vote extends Component {
                       </Row>
                       <Row >
                         <Col style={{ fontWeight: 'bold' }} md={{ span: 10, offset: 1 }}>
-                        <Button block variant="primary"
+                        <Button block variant="primary" disabled={this.state.selectedAnswer === '' ? true : false}
                           onClick={() =>this.handleVote({
                             authedUser,
                             qid: question.id,
@@ -103,10 +111,10 @@ class Vote extends Component {
               <Card.Body>
                 <Media>
                   <img
-                    className="avatar-takevote align-self-center mr-5 ml-3"
+                    className="avatar-vote align-self-center mr-5 ml-3"
                     src={users[question.author].avatarURL}
                     alt={`Avatar of ${users[question.author].avatarURL}`} />
-                  <Media.Body className='media-body-takevote'>
+                  <Media.Body className='media-body-vote'>
                     <Container>
                       <Row>
                         <Col md={{ span: 10, offset: 1}} style={{ marginBottom: '8px', fontWeight: 'bold'}} >

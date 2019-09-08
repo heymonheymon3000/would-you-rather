@@ -14,33 +14,33 @@ class NavBar extends Component {
           <Navbar.Brand>Would You Rather!</Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             { authedUser &&
-              <Fragment>
-                <Nav>
-                  <LinkContainer className="nav-link" to="/home">
-                    <NavItem>Home</NavItem>
-                  </LinkContainer>
-                  <LinkContainer className="nav-link" to="/add">
-                      <NavItem>New Question</NavItem>
-                  </LinkContainer>
-                  <LinkContainer className="nav-link" to="/leaderboard">
-                    <NavItem>Leader Board</NavItem>
-                  </LinkContainer>
-                </Nav>
-                <Navbar.Collapse className="justify-content-end">
-                  <NavItem className="px-md-1">
-                    Hello, { users[authedUser].name }
-                  </NavItem>
-                  <NavItem className="px-md-1">
-                    <img
-                      src={ users[authedUser].avatarURL }
-                      alt={`Avatar of ${users[authedUser].name}`}
-                      className="avatar" />
-                  </NavItem>
-                  <LinkContainer className="nav-link" to="/">
-                    <NavItem>Logout</NavItem>
-                  </LinkContainer>
-                </Navbar.Collapse>
-              </Fragment>
+                <Fragment>
+                  <Nav>
+                    <LinkContainer className="nav-link" to="/home">
+                      <NavItem>Home</NavItem>
+                    </LinkContainer>
+                    <LinkContainer className="nav-link" to="/add">
+                        <NavItem>New Question</NavItem>
+                    </LinkContainer>
+                    <LinkContainer className="nav-link" to="/leaderboard">
+                      <NavItem>Leader Board</NavItem>
+                    </LinkContainer>
+                  </Nav>
+                  <Navbar.Collapse className="justify-content-end">
+                    <NavItem className="px-md-1">
+                      Hello, { users[authedUser].name }
+                    </NavItem>
+                    <NavItem className="px-md-1">
+                      <img
+                        src={ users[authedUser].avatarURL }
+                        alt={`Avatar of ${users[authedUser].name}`}
+                        className="avatar" />
+                    </NavItem>
+                    <LinkContainer className="nav-link" to="/">
+                      <NavItem>Logout</NavItem>
+                    </LinkContainer>
+                  </Navbar.Collapse>
+                </Fragment>
           }
         </Navbar>
       </div>

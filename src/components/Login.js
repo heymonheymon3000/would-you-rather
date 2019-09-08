@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import { Card, Dropdown, Container, Row }  from 'react-bootstrap'
 import { setAuthedUser } from '../actions/authedUser'
 import User from './User'
-import { Card, Dropdown, Container, Row }  from 'react-bootstrap'
 
 class Login extends Component {
   componentDidMount() {
