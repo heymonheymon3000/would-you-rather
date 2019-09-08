@@ -1,0 +1,22 @@
+.leaderboard-user {
+	margin-bottom: 70px;
+}
+
+.avatar-holder {
+	margin-bottom: 48px;
+}
+
+.avatar-holder-none {
+	margin-bottom: 12px;
+}
+
+
+.avatar-leaderboard {
+	border-radius: 50%;
+	max-height: 80px;
+	height: 80px;
+	float: left;
+	margin-right: 12px;
+	margin-top: 5px;
+	vertical-align: middle;
+}

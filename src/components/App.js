@@ -1,26 +1,48 @@
-import React, { Component } from 'react'
-import { BrowserRouter as Router, Route } from 'react-router-dom'
+import React, { Component, Fragment } from 'react'
 import { connect } from 'react-redux'
 import { handleInitialData } from '../actions/shared'
-import Login from './Login'
-import Home from './Home'
+import Dashboard from '../components/Dashboard'
+import Login from '../components/Login'
+import LoadingBar from 'react-redux-loading'
+import Leaderboard from '../components/Leaderboard'
+import AddQuestion from '../components/AddQuestion'
+import Vote from '../components/Vote'
+import Navbar from './Navbar'
+import { BrowserRouter as Router, Route } from 'react-router-dom'
+import PrivateRoute from './PrivateRoute'
 
 class App extends Component {
   componentDidMount() {
     this.props.dispatch(handleInitialData())
   }
-  
-  render () {
+
+  render() {
     return (
       <Router>
-        <div className='container'>
-          <Route path='/' exact component={Home} />
-          <Route path='/login' exact component={Login} />
-        </div>
+        <Fragment>
+          <LoadingBar />
+          <div>
+            <Navbar />
+            {this.props.loading === true ? null : (
+              <div>
+                <Route path="/" exact component={Login} />
+                <PrivateRoute path="/home" component={Dashboard} />
+                <PrivateRoute path="/add" component={AddQuestion} />
+                <PrivateRoute path="/question/:question_id" component={Vote} />
+                <PrivateRoute path="/leaderboard" component={Leaderboard} />
+              </div>
+            )}
+          </div>
+        </Fragment>
       </Router>
     )
-
   }
 }
 
-export default connect()(App)
+function mapStateToProps({ loadingBar }) {
+  return {
+    loading: loadingBar > 0
+  }
+}
+
+export default connect(mapStateToProps)(App)

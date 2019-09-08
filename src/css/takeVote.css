@@ -1,0 +1,53 @@
+.vote-container {
+	margin: 5% auto;
+	width: 350px;
+}
+
+.avatar-holder {
+	padding-bottom: 0px;
+}
+
+.vote-btn {
+	background-color: mediumseagreen;
+	height: 40px;
+	color: white;
+	border-radius: 5px;
+	font-weight: bold;
+}
+
+.author {
+	padding-top: 20px;
+}
+
+.yourAnswer {
+	color: mediumseagreen;
+}
+
+.returnBtn {
+	height: 45px;
+	background-color: white;
+	border-radius: 5px;
+	margin: 20px;
+	font-weight: bold;
+	padding-left: 24px;
+	padding-right: 24px;
+}
+
+.green {
+	color: mediumseagreen;
+}
+
+.media-body-takevote {
+	border-left: solid 1px #ccc;
+}
+
+
+.avatar-takevote {
+	border-radius: 50%;
+	max-height: 80px;
+	height: 80px;
+	float: left;
+	margin-right: 12px;
+	margin-top: 5px;
+	vertical-align: middle;
+}
